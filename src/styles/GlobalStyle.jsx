@@ -20,6 +20,7 @@ export default createGlobalStyle`
     background: url(${BackgroundImagem});
     background-size: cover;
   background-position: center center;
+
     &::before {
     content: "";
     position: absolute;
@@ -28,8 +29,7 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(3px);
-
-
+    backdrop-filter: blur(3px); 
+    z-index: -1;
   }
   }`;
