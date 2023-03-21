@@ -17,7 +17,9 @@ export default createGlobalStyle`
     position: relative;
     font: 14px 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased !important;
-    background: url(${BackgroundImagem}) center 100%;
+    background: url(${BackgroundImagem});
+    background-size: cover;
+  background-position: center center;
     &::before {
     content: "";
     position: absolute;
