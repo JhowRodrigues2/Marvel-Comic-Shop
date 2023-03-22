@@ -1,12 +1,15 @@
 import GlobalStyle from "./styles/GlobalStyle";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import MenuCheckoutProvider from "./context";
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <Footer />
+      <MenuCheckoutProvider>
+        <GlobalStyle />
+        <Header />
+        <Footer />
+      </MenuCheckoutProvider>
     </>
   );
 }
