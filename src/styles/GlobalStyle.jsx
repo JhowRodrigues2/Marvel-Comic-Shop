@@ -28,8 +28,8 @@ export default createGlobalStyle`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(3px); 
     z-index: -1;
+    background-color: rgba(0, 0, 0, 0.8);
   }
   }`;
