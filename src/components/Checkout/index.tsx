@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
-import { CheckoutContainer } from "./styles";
+import { CheckoutContainer, CheckoutButton, CheckoutClose } from "./styles";
 import { MenuCheckoutContext } from "../../context";
 
 export const Checkout = () => {
-  const { isMenuOpen } = useContext(MenuCheckoutContext);
+  const { isMenuOpen, toggleMenu } = useContext(MenuCheckoutContext);
 
-  return <CheckoutContainer isMenuOpen={isMenuOpen}>index</CheckoutContainer>;
+  return (
+    <CheckoutContainer isMenuOpen={isMenuOpen}>
+      <CheckoutClose onClick={toggleMenu}>X</CheckoutClose>
+      <CheckoutButton>Finalizar compra</CheckoutButton>
+    </CheckoutContainer>
+  );
 };
