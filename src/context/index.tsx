@@ -1,17 +1,22 @@
 import React, { createContext, useState } from "react";
+export const GlobalContext = createContext({});
 
-export const MenuCheckoutContext = createContext({});
-
-const MenuCheckoutProvider = ({ children }) => {
+const GlobalProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  const publicKey = import.meta.env.VITE_API_PUBLIC_KEY;
+  const privateKey = import.meta.env.VITE_API_PRIVATE_KEY;
+
+  console.log(publicKey, privateKey);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
-    <MenuCheckoutContext.Provider value={{ isMenuOpen, toggleMenu }}>
+    <GlobalContext.Provider value={{ isMenuOpen, toggleMenu }}>
       {children}
-    </MenuCheckoutContext.Provider>
+    </GlobalContext.Provider>
   );
 };
-export default MenuCheckoutProvider;
+export default GlobalProvider;

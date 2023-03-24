@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { CheckoutContainer, CheckoutButton, CheckoutClose } from "./styles";
-import { MenuCheckoutContext } from "../../context";
+import { GlobalContext } from "../../context";
 
 export const Checkout = () => {
-  const { isMenuOpen, toggleMenu } = useContext(MenuCheckoutContext);
+  const { isMenuOpen, toggleMenu } = useContext(GlobalContext);
 
   return (
     <CheckoutContainer isMenuOpen={isMenuOpen}>

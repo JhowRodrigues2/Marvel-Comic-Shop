@@ -3,9 +3,9 @@ import { HeaderContainer, ShoppingCart } from "./styles";
 import LogoMarvel from "../../assets/logoMarvel.svg";
 import { FiShoppingCart } from "react-icons/fi";
 import { Checkout } from "../Checkout";
-import { MenuCheckoutContext } from "../../context";
+import { GlobalContext } from "../../context";
 export const Header = () => {
-  const { toggleMenu } = useContext(MenuCheckoutContext);
+  const { toggleMenu } = useContext(GlobalContext);
 
   return (
     <HeaderContainer>
