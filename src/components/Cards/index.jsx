@@ -38,12 +38,10 @@ export const Cards = () => {
         <Card />
         <Card />
         <Card />
+        <Card /> <Card />
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card /> <Card />
+        <Card /> <Card />
         <Card />
         <Card />
       </CardListContainer>

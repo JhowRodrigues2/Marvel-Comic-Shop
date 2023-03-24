@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const CardsContainer = styled.div`
   width: 85%;
@@ -80,27 +80,58 @@ export const Search = styled.div`
     }
   }
 `;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export const CardListContainer = styled.ul`
-  background: blue;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
   gap: 1rem;
   padding: 5px;
   list-style: none;
+  opacity: 0;
 
-  @media screen and (max-width: 780px) {
-    grid-template-columns: repeat(3, 1fr);
+  animation: ${fadeIn} 1s ease-in-out forwards;
+
+  li {
+    opacity: 0;
+    animation: ${fadeIn} 1s ease-in-out forwards;
+  }
+
+  li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  li:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  li:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+
+  li:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+
+  @media (max-width: 780px) {
     height: auto;
   }
-  @media screen and (max-width: 660px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-  }
-  @media screen and (max-width: 440px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(16, 1fr);
+
+  @media (max-width: 440px) {
     align-items: center;
     justify-items: center;
   }
