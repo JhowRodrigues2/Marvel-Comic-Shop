@@ -8,7 +8,7 @@ export const Checkout = () => {
   return (
     <CheckoutContainer isMenuOpen={isMenuOpen}>
       <CheckoutClose onClick={toggleMenu}>X</CheckoutClose>
-      <CheckoutButton>Finalizar compra</CheckoutButton>
+      <CheckoutButton>FINALIZAR COMPRA</CheckoutButton>
     </CheckoutContainer>
   );
 };

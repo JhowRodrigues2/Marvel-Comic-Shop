@@ -37,7 +37,6 @@ export const CheckoutButton = styled.button`
   cursor: pointer;
   border: none;
   font-size: 18px;
-  text-transform: uppercase;
   font-family: "Bangers", cursive;
   letter-spacing: 2px;
   font-weight: 700;
