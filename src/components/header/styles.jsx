@@ -34,7 +34,7 @@ export const ShoppingCart = styled.div`
     border: 0;
     cursor: pointer;
   }
-  @media (max-width: 550px) {
+  @media screen and (max-width: 550px) {
     button {
       font-size: 25px;
     }

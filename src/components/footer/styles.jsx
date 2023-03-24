@@ -18,11 +18,11 @@ export const FooterContainer = styled.div`
   a:visited {
     color: #a8a4a4;
   }
-  @media (max-width: 550px) {
+  @media screen and(max-width: 550px) {
     font-size: 12px;
     gap: 10px;
   }
-  @media (max-width: 380px) {
+  @media screen and(max-width: 380px) {
     font-size: 10px;
     gap: 8px;
   }

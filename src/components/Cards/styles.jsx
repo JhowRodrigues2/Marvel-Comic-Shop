@@ -90,15 +90,15 @@ export const CardListContainer = styled.ul`
   padding: 5px;
   list-style: none;
 
-  @media (max-width: 780px) {
+  @media screen and (max-width: 780px) {
     grid-template-columns: repeat(3, 1fr);
     height: auto;
   }
-  @media (max-width: 660px) {
+  @media screen and (max-width: 660px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(9, 1fr);
   }
-  @media (max-width: 440px) {
+  @media screen and (max-width: 440px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(16, 1fr);
     align-items: center;

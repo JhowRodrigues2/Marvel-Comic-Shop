@@ -23,7 +23,7 @@ export const CheckoutContainer = styled.div`
       opacity: 1;
     }
   }
-  @media (max-width: 620px) {
+  @media screen and(max-width: 620px) {
     width: 70%;
   }
 `;
