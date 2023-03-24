@@ -12,6 +12,7 @@ export const CheckoutContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   animation: fromLeft 0.5s backwards;
+  z-index: 20;
 
   @keyframes fromLeft {
     from {
@@ -23,7 +24,7 @@ export const CheckoutContainer = styled.div`
       opacity: 1;
     }
   }
-  @media screen and(max-width: 620px) {
+  @media (max-width: 620px) {
     width: 70%;
   }
 `;
