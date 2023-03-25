@@ -1,8 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 export const CardsContainer = styled.div`
-  width: 85%;
-  height: 75vh;
+  width: 80%;
+  height: 80vh;
 `;
 export const SearchContainer = styled.div`
   display: flex;

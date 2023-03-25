@@ -1,27 +1,32 @@
 import React from "react";
 import {
   CardItem,
+  CardInformation,
   Title,
   ButtonContainer,
   Details,
   Buy,
   Price,
 } from "./styles";
-import { FiShoppingCart } from "react-icons/fi";
 
-export const Card = () => {
+export const Card = ({ thumbnail, price, comicTitle }) => {
   return (
     <CardItem>
-      <img src="https://picsum.photos/100/120" alt="" />
-      <Title>Homem Aranha</Title>
-      <Price>$ 50,00</Price>
-      <ButtonContainer>
-        <Details>DETALHES</Details>
-        <Buy>
-          <FiShoppingCart size={15} />
-          COMPRAR
-        </Buy>
-      </ButtonContainer>
+      <img src={`${thumbnail}.jpg`} alt="" />
+
+      <CardInformation>
+        <Title>{comicTitle}</Title>
+        <Price>
+          {price.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </Price>
+        <ButtonContainer>
+          <Details>Detalhe</Details>
+          <Buy>Comprar</Buy>
+        </ButtonContainer>
+      </CardInformation>
     </CardItem>
   );
 };

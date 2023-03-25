@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CardsContainer, SearchContainer, CardListContainer } from "./styles";
 import { Search } from "./styles";
 import { FaSearchengin } from "react-icons/fa";
 import { Card } from "../Card";
+import { GlobalContext } from "../../context";
 export const Cards = () => {
   const [placeholder, setPlaceholder] = useState("PESQUISAR QUADRINHO");
 
@@ -13,6 +14,9 @@ export const Cards = () => {
   const handleOnBlur = () => {
     setPlaceholder("PESQUISAR QUADRINHO");
   };
+
+  const { comicsDATA } = useContext(GlobalContext);
+
   return (
     <CardsContainer>
       <SearchContainer>
@@ -31,19 +35,16 @@ export const Cards = () => {
         </Search>
       </SearchContainer>
       <CardListContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card /> <Card />
-        <Card />
-        <Card /> <Card />
-        <Card /> <Card />
-        <Card />
-        <Card />
+        {comicsDATA.map(
+          (comic) =>
+            comic.prices[0].price > 0 && (
+              <Card
+                thumbnail={comic.thumbnail.path}
+                comicTitle={comic.title}
+                price={comic.prices[0].price}
+              />
+            )
+        )}
       </CardListContainer>
     </CardsContainer>
   );

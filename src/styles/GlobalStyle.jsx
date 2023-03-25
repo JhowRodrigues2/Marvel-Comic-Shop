@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import BackgroundImagem from "../assets/background.jpg";
-
+import styled from "styled-components";
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
@@ -21,8 +21,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     background: url(${BackgroundImagem});
     background-size: cover;
-  background-position: center center;
-
+    background-position: center center;
     &::before {
     content: "";
     position: absolute;
@@ -34,3 +33,10 @@ export default createGlobalStyle`
     background-color: rgba(0, 0, 0, 0.6);
   }
   }`;
+
+export const AppContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
