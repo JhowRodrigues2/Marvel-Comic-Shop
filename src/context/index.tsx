@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
   const currentItens = comicsDATA.slice(startIndex, endIndex);
-  const publicKey = import.meta.env.VITE_API_PUBLIC_KEY;
+  const publicKey = "6957be1383fc0b2a449ddbe9f6dd5274";
   const privateKey = import.meta.env.VITE_API_PRIVATE_KEY;
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const GlobalProvider = ({ children }) => {
       const hash = md5(timestamp + privateKey + publicKey);
 
       const req = await fetch(
-        `https://gateway.marvel.com/v1/public/comics?&limit=100&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&orderBy=-onsaleDate`
+        `https://gateway.marvel.com/v1/public/comics?&limit=100&ts=${timestamp}&apikey=6957be1383fc0b2a449ddbe9f6dd5274&hash=${hash}&orderBy=-onsaleDate`
       );
       const res = await req.json();
       const filteredData = res.data.results.filter(
