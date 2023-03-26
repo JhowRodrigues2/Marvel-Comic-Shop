@@ -65,4 +65,11 @@ export const CheckoutClose = styled.button`
     font-size: 20px;
   }
 `;
-export const CheckoutItens = styled.div``;
+export const CheckoutItensContainer = styled.div`
+  width: 100%;
+  height: 90%;
+  color: #fff;
+`;
+export const CheckoutItensList = styled.div`
+  color: #fff;
+`;

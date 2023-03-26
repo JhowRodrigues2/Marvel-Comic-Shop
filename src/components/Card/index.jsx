@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   CardItem,
   CardInformation,
@@ -9,11 +9,12 @@ import {
   Price,
 } from "./styles";
 import Swal from "sweetalert2";
-
+import { GlobalContext } from "../../context";
 export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
+  const { addCart } = useContext(GlobalContext);
   return (
     <CardItem>
-      <img src={`${thumbnail}.jpg`} alt="" />
+      <img src={`${thumbnail}.jpg`} alt="thumbnail comic" />
 
       <CardInformation>
         <Title>{comicTitle}</Title>
@@ -39,7 +40,7 @@ export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
           >
             Detalhe
           </Details>
-          <Buy>Comprar</Buy>
+          <Buy onClick={() => addCart(comicTitle)}>Comprar</Buy>
         </ButtonContainer>
       </CardInformation>
     </CardItem>

@@ -8,8 +8,9 @@ const GlobalProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [inputText, setInputText] = useState("");
   const [error, setError] = useState("");
-  const [itensPerPage, setItensPerPage] = useState(12);
+  const [itensPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
   const pages = Math.ceil(comicsDATA && comicsDATA.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
@@ -53,6 +54,11 @@ const GlobalProvider = ({ children }) => {
     setError("");
   };
 
+  const addCart = (items) => {
+    setCartItems([...cartItems, items]);
+    console.log(cartItems);
+  };
+
   const handleSearch = async () => {
     const timestamp = new Date().getTime();
     const hash = md5(timestamp + privateKey + publicKey);
@@ -89,6 +95,8 @@ const GlobalProvider = ({ children }) => {
         handleChange,
         inputText,
         error,
+        addCart,
+        cartItems,
       }}
     >
       {children}
