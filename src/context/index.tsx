@@ -17,7 +17,7 @@ const GlobalProvider = ({ children }) => {
   const endIndex = startIndex + itensPerPage;
   const currentItens = comicsDATA.slice(startIndex, endIndex);
   const publicKey = "6957be1383fc0b2a449ddbe9f6dd5274";
-  const privateKey = import.meta.env.VITE_API_PRIVATE_KEY;
+  const privateKey = "669a8c930982271423a321682044d536152f73b2";
 
   useEffect(() => {
     const loadHeroesComics = async () => {
