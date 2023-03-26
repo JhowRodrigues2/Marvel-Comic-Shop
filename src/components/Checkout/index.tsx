@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
-import { CheckoutContainer, CheckoutButton, CheckoutClose } from "./styles";
+import {
+  CheckoutContainer,
+  CheckoutButton,
+  CheckoutClose,
+  CheckoutItens,
+} from "./styles";
 import { GlobalContext } from "../../context";
 
 export const Checkout = () => {
@@ -8,6 +13,7 @@ export const Checkout = () => {
   return (
     <CheckoutContainer isMenuOpen={isMenuOpen}>
       <CheckoutClose onClick={toggleMenu}>X</CheckoutClose>
+      <CheckoutItens></CheckoutItens>
       <CheckoutButton>FINALIZAR COMPRA</CheckoutButton>
     </CheckoutContainer>
   );

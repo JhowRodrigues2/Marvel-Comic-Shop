@@ -124,45 +124,45 @@ export const CardListContainer = styled.ul`
   }
 
   li:nth-child(2) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
   }
 
   li:nth-child(3) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
   }
 
   li:nth-child(4) {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
   }
   li:nth-child(4) {
-    animation-delay: 0.9s;
+    animation-delay: 0.5s;
   }
   li:nth-child(5) {
-    animation-delay: 1.1s;
+    animation-delay: 0.6s;
   }
   li:nth-child(6) {
-    animation-delay: 1.3s;
+    animation-delay: 0.7s;
   }
   li:nth-child(7) {
-    animation-delay: 1.5s;
+    animation-delay: 0.8s;
   }
   li:nth-child(8) {
-    animation-delay: 1.7s;
+    animation-delay: 0.9s;
   }
   li:nth-child(8) {
-    animation-delay: 1.9s;
+    animation-delay: 1s;
   }
   li:nth-child(9) {
-    animation-delay: 2.1s;
+    animation-delay: 1.1s;
   }
   li:nth-child(10) {
-    animation-delay: 2.3s;
+    animation-delay: 1.2s;
   }
   li:nth-child(11) {
-    animation-delay: 2.5s;
+    animation-delay: 1.3s;
   }
   li:nth-child(12) {
-    animation-delay: 2.7s;
+    animation-delay: 1.4s;
   }
   @media (max-width: 780px) {
     height: auto;

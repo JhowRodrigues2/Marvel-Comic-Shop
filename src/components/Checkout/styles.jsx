@@ -65,3 +65,4 @@ export const CheckoutClose = styled.button`
     font-size: 20px;
   }
 `;
+export const CheckoutItens = styled.div``;
