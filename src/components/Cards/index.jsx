@@ -58,6 +58,14 @@ export const Cards = () => {
                 thumbnail={comic.thumbnail.path}
                 comicTitle={comic.title}
                 price={comic.prices[0].price}
+                creators={
+                  comic.creators.items.length > 0
+                    ? comic.creators.items.map((author) => author.name)
+                    : "Autor Desocnhecido"
+                }
+                pageCount={
+                  comic.pageCount > 0 ? comic.pageCount : "Desconhecido"
+                }
               />
             )
         )}

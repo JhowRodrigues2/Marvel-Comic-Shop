@@ -8,8 +8,9 @@ import {
   Buy,
   Price,
 } from "./styles";
+import Swal from "sweetalert2";
 
-export const Card = ({ thumbnail, price, comicTitle }) => {
+export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
   return (
     <CardItem>
       <img src={`${thumbnail}.jpg`} alt="" />
@@ -23,7 +24,21 @@ export const Card = ({ thumbnail, price, comicTitle }) => {
           })}
         </Price>
         <ButtonContainer>
-          <Details>Detalhe</Details>
+          <Details
+            onClick={() =>
+              Swal.fire({
+                title: comicTitle,
+                html: `<b> Autor(es):  </b> ${creators}
+                <br> <b>Número de páginas:</b> ${pageCount}`,
+                imageUrl: `${thumbnail}.jpg`,
+                imageWidth: 300,
+                imageHeight: 300,
+                imageAlt: comicTitle,
+              })
+            }
+          >
+            Detalhe
+          </Details>
           <Buy>Comprar</Buy>
         </ButtonContainer>
       </CardInformation>

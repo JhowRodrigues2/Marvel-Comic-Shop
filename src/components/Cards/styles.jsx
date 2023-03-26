@@ -33,7 +33,7 @@ export const Search = styled.div`
     border-radius: 50px;
     font-family: "Bangers", cursive;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 2px;
     font-size: 16px;
     padding-left: 24px;

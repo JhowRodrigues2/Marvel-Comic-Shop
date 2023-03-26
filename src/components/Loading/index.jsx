@@ -5,7 +5,7 @@ import MarvelLogo from "../../assets/logoMarvel.svg";
 export const Loading = () => {
   return (
     <LoadingContainer>
-      <img src={MarvelLogo} alt="" srcset="" />
+      <img src={MarvelLogo} alt="Marvel Logo" />
     </LoadingContainer>
   );
 };

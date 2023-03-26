@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <img src={LogoMarvel} alt="" srcset="" />
+      <img src={LogoMarvel} alt="Marvel Logo" />
       <ShoppingCart>
         <button onClick={toggleMenu}>
           <FiShoppingCart />
