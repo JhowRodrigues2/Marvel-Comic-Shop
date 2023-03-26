@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardItem = styled.li`
   width: 300px;
   min-width: 20vh;
-  height: 32vh;
+  height: 30vh;
   background: linear-gradient(to bottom, #1b1b1a 60%, #000000 40%);
   font-family: "Bangers", cursive;
   display: flex;

@@ -2,13 +2,13 @@ import styled, { keyframes } from "styled-components";
 
 export const CardsContainer = styled.div`
   width: 80%;
-  height: 80vh;
+  height: 85vh;
 `;
 export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 10vh;
+  height: 8vh;
   align-items: center;
 `;
 
@@ -126,7 +126,36 @@ export const CardListContainer = styled.ul`
   li:nth-child(4) {
     animation-delay: 0.7s;
   }
-
+  li:nth-child(4) {
+    animation-delay: 0.9s;
+  }
+  li:nth-child(5) {
+    animation-delay: 1.1s;
+  }
+  li:nth-child(6) {
+    animation-delay: 1.3s;
+  }
+  li:nth-child(7) {
+    animation-delay: 1.5s;
+  }
+  li:nth-child(8) {
+    animation-delay: 1.7s;
+  }
+  li:nth-child(8) {
+    animation-delay: 1.9s;
+  }
+  li:nth-child(9) {
+    animation-delay: 2.1s;
+  }
+  li:nth-child(10) {
+    animation-delay: 2.3s;
+  }
+  li:nth-child(11) {
+    animation-delay: 2.5s;
+  }
+  li:nth-child(12) {
+    animation-delay: 2.7s;
+  }
   @media (max-width: 780px) {
     height: auto;
   }
@@ -134,5 +163,30 @@ export const CardListContainer = styled.ul`
   @media (max-width: 440px) {
     align-items: center;
     justify-items: center;
+  }
+`;
+export const PaginationContainer = styled.div`
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+  @media (min-width: 550px) {
+    margin-bottom: 5vh;
+  }
+`;
+
+export const Pagination = styled.button`
+  background: transparent;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  color: #fff;
+  border: none;
+  &:hover {
+    opacity: 1;
   }
 `;
