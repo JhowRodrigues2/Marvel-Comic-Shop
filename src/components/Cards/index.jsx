@@ -12,7 +12,6 @@ import { Card } from "../Card";
 import { GlobalContext } from "../../context";
 export const Cards = () => {
   const [placeholder, setPlaceholder] = useState("PESQUISAR QUADRINHO");
-
   const handleOnFocus = () => {
     setPlaceholder("");
   };
@@ -21,8 +20,15 @@ export const Cards = () => {
     setPlaceholder("PESQUISAR QUADRINHO");
   };
 
-  const { pages, setCurrentPage, currentItens, currentPage } =
-    useContext(GlobalContext);
+  const {
+    pages,
+    setCurrentPage,
+    currentItens,
+    handleSearch,
+    handleChange,
+    inputText,
+    error,
+  } = useContext(GlobalContext);
   return (
     <CardsContainer>
       <SearchContainer>
@@ -34,11 +40,14 @@ export const Cards = () => {
             placeholder={`${placeholder}`}
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
+            onChange={handleChange}
+            value={inputText}
           />
-          <button>
+          <button onClick={handleSearch}>
             <FaSearchengin />
           </button>
         </Search>
+        <span>{error}</span>
       </SearchContainer>
       <CardListContainer>
         {currentItens.map(

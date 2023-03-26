@@ -6,7 +6,8 @@ const GlobalProvider = ({ children }) => {
   const [comicsDATA, setComicsDATA] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [inputText, setInputText] = useState("");
+  const [error, setError] = useState("");
   const [itensPerPage, setItensPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -18,17 +19,16 @@ const GlobalProvider = ({ children }) => {
   const privateKey = import.meta.env.VITE_API_PRIVATE_KEY;
 
   useEffect(() => {
-    async function loadHeroesComics() {
+    const loadHeroesComics = async () => {
       setIsLoading(true);
 
       const timestamp = new Date().getTime();
       const hash = md5(timestamp + privateKey + publicKey);
 
       const req = await fetch(
-        `https://gateway.marvel.com/v1/public/comics?limit=100&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&orderBy=-onsaleDate `
+        `https://gateway.marvel.com/v1/public/comics?&limit=100&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&orderBy=-onsaleDate`
       );
       const res = await req.json();
-
       const filteredData = res.data.results.filter(
         (item) =>
           item.prices[0].price > 0 &&
@@ -38,7 +38,9 @@ const GlobalProvider = ({ children }) => {
 
       setIsLoading(false);
       setComicsDATA(filteredData);
-    }
+      setError("");
+    };
+
     loadHeroesComics();
   }, []);
 
@@ -46,6 +48,33 @@ const GlobalProvider = ({ children }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleChange = (event) => {
+    setInputText(event.target.value);
+    setError("");
+  };
+
+  const handleSearch = async () => {
+    const timestamp = new Date().getTime();
+    const hash = md5(timestamp + privateKey + publicKey);
+    try {
+      const req = await fetch(
+        `https://gateway.marvel.com/v1/public/comics?limit=100&ts=${timestamp}&apikey=${publicKey}&hash=${hash}&orderBy=-onsaleDate&titleStartsWith=${inputText}`
+      );
+      const res = await req.json();
+      const filteredData = res.data.results.filter(
+        (item) =>
+          item.prices[0].price > 0 &&
+          item.thumbnail.path !==
+            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+      );
+
+      res.data.total == 0
+        ? setError("Dados Inválidos!")
+        : setComicsDATA(filteredData);
+    } catch (error) {
+      error && setError("Dados Inválidos!");
+    }
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -56,6 +85,10 @@ const GlobalProvider = ({ children }) => {
         pages,
         setCurrentPage,
         currentItens,
+        handleSearch,
+        handleChange,
+        inputText,
+        error,
       }}
     >
       {children}

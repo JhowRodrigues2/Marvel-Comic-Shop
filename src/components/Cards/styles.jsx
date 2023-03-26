@@ -10,6 +10,14 @@ export const SearchContainer = styled.div`
   justify-content: center;
   height: 8vh;
   align-items: center;
+  span {
+    height: 2vh;
+    padding-top: 10px;
+    color: #f14343;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Search = styled.div`
