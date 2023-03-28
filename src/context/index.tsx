@@ -54,8 +54,8 @@ const GlobalProvider = ({ children }) => {
     setError("");
   };
 
-  const addCart = (items) => {
-    setCartItems([...cartItems, items]);
+  const addCart = (comicTitle, price) => {
+    setCartItems([...cartItems, comicTitle, price]);
     console.log(cartItems);
   };
 
@@ -103,4 +103,5 @@ const GlobalProvider = ({ children }) => {
     </GlobalContext.Provider>
   );
 };
+
 export default GlobalProvider;

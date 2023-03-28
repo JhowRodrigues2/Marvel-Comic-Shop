@@ -12,18 +12,19 @@ import Swal from "sweetalert2";
 import { GlobalContext } from "../../context";
 export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
   const { addCart } = useContext(GlobalContext);
+
+  const priceCurrencyBRL = price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
   return (
     <CardItem>
       <img src={`${thumbnail}.jpg`} alt="thumbnail comic" />
 
       <CardInformation>
         <Title>{comicTitle}</Title>
-        <Price>
-          {price.toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </Price>
+        <Price>{priceCurrencyBRL}</Price>
         <ButtonContainer>
           <Details
             onClick={() =>
@@ -40,7 +41,9 @@ export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
           >
             Detalhe
           </Details>
-          <Buy onClick={() => addCart(comicTitle)}>Comprar</Buy>
+          <Buy onClick={() => addCart(comicTitle, priceCurrencyBRL)}>
+            Comprar
+          </Buy>
         </ButtonContainer>
       </CardInformation>
     </CardItem>
