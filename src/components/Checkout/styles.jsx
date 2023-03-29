@@ -70,6 +70,6 @@ export const CheckoutItensContainer = styled.div`
   height: 90%;
   color: #fff;
 `;
-export const CheckoutItensList = styled.div`
+export const CheckoutItensList = styled.ul`
   color: #fff;
 `;

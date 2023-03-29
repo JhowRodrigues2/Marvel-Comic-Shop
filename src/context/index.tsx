@@ -54,9 +54,11 @@ const GlobalProvider = ({ children }) => {
     setError("");
   };
 
-  const addCart = (comicTitle, price) => {
-    setCartItems([...cartItems, comicTitle, price]);
-    console.log(cartItems);
+  const addCart = (comicTitle, price, thumbnail) => {
+    setCartItems([
+      ...cartItems,
+      { title: comicTitle, price: price, thumbnail: thumbnail },
+    ]);
   };
 
   const handleSearch = async () => {

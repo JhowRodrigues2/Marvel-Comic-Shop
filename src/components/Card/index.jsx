@@ -17,7 +17,6 @@ export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
     style: "currency",
     currency: "BRL",
   });
-
   return (
     <CardItem>
       <img src={`${thumbnail}.jpg`} alt="thumbnail comic" />
@@ -41,7 +40,7 @@ export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
           >
             Detalhe
           </Details>
-          <Buy onClick={() => addCart(comicTitle, priceCurrencyBRL)}>
+          <Buy onClick={() => addCart(comicTitle, priceCurrencyBRL, thumbnail)}>
             Comprar
           </Buy>
         </ButtonContainer>
