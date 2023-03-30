@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  width: 486px;
+  width: 686px;
   height: 95vh;
   position: fixed;
   display: ${({ isMenuOpen }) => (isMenuOpen ? "none" : " flex")};
@@ -70,6 +70,54 @@ export const CheckoutItensContainer = styled.div`
   height: 90%;
   color: #fff;
 `;
-export const CheckoutItensList = styled.ul`
+export const CheckoutItensList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #ee1212;
   color: #fff;
+  border-radius: 8px;
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+  }
+  span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+  }
+`;
+export const CheckoutItemQuantity = styled.div`
+  display: flex;
+  border: 1px solid lightgray;
+  padding: 2px 0;
+  border-radius: 4px;
+  width: 65px;
+  height: 19px;
+  button {
+    font-size: 12px;
+    width: 1.8rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .span {
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding: 0 0.75rem;
+    font-size: 12px;
+    font-weight: 600;
+    align-self: center;
+  }
+  @media (max-width: 768px) {
+    width: 97px;
+    height: 34px;
+  }
+  button {
+    color: #000000;
+    font-weight: 400;
+  }
 `;

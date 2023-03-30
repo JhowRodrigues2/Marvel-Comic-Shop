@@ -5,6 +5,7 @@ import {
   CheckoutClose,
   CheckoutItensContainer,
   CheckoutItensList,
+  CheckoutItemQuantity,
 } from "./styles";
 import { GlobalContext } from "../../context";
 import { v4 as uuidv4 } from "uuid";
@@ -20,13 +21,17 @@ export const Checkout = () => {
           ? cartItems.map((item) => (
               <CheckoutItensList key={uuidv4()}>
                 <img src={`${item.thumbnail}.jpg`} />
-                <p>{item.title}</p>
-                <span>{item.price}</span>
+                <CheckoutItemQuantity>
+                  <button>-</button>
+                  <span>{item.quantity}</span>
+                  <button>+</button>
+                </CheckoutItemQuantity>
+                <span>{item.price * item.quantity}</span>
               </CheckoutItensList>
             ))
           : ""}
       </CheckoutItensContainer>
-      <CheckoutButton>FINALIZAR COMPRA</CheckoutButton>
+      <CheckoutButton>Finalizar Compra</CheckoutButton>
     </CheckoutContainer>
   );
 };

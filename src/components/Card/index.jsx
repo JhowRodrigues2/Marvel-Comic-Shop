@@ -13,17 +13,13 @@ import { GlobalContext } from "../../context";
 export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
   const { addCart } = useContext(GlobalContext);
 
-  const priceCurrencyBRL = price.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
   return (
     <CardItem>
       <img src={`${thumbnail}.jpg`} alt="thumbnail comic" />
 
       <CardInformation>
         <Title>{comicTitle}</Title>
-        <Price>{priceCurrencyBRL}</Price>
+        <Price>{price}</Price>
         <ButtonContainer>
           <Details
             onClick={() =>
@@ -40,9 +36,7 @@ export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
           >
             Detalhe
           </Details>
-          <Buy onClick={() => addCart(comicTitle, priceCurrencyBRL, thumbnail)}>
-            Comprar
-          </Buy>
+          <Buy onClick={() => addCart(thumbnail, price)}>Comprar</Buy>
         </ButtonContainer>
       </CardInformation>
     </CardItem>

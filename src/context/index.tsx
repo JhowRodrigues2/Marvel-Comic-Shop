@@ -12,6 +12,7 @@ const GlobalProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
+  const [quantity, setQuantity] = useState(0);
   const pages = Math.ceil(comicsDATA && comicsDATA.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
@@ -54,11 +55,27 @@ const GlobalProvider = ({ children }) => {
     setError("");
   };
 
-  const addCart = (comicTitle, price, thumbnail) => {
-    setCartItems([
-      ...cartItems,
-      { title: comicTitle, price: price, thumbnail: thumbnail },
-    ]);
+  const addCart = (thumbnail, price) => {
+    const existingCartItem = cartItems.find(
+      (item) => item.thumbnail === thumbnail
+    );
+    if (existingCartItem === undefined) {
+      setCartItems([
+        ...cartItems,
+        { thumbnail: thumbnail, price: price, quantity: 1 },
+      ]);
+    } else {
+      const updatedCartItems = cartItems.map((item) => {
+        if (item.thumbnail === thumbnail) {
+          return { ...item, quantity: item.quantity + 1 };
+        } else {
+          return item;
+        }
+      });
+      setCartItems(updatedCartItems);
+    }
+
+    console.log(cartItems);
   };
 
   const handleSearch = async () => {
@@ -99,6 +116,7 @@ const GlobalProvider = ({ children }) => {
         error,
         addCart,
         cartItems,
+        quantity,
       }}
     >
       {children}
