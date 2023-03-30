@@ -11,7 +11,13 @@ import { GlobalContext } from "../../context";
 import { v4 as uuidv4 } from "uuid";
 
 export const Checkout = () => {
-  const { isMenuOpen, toggleMenu, cartItems } = useContext(GlobalContext);
+  const {
+    isMenuOpen,
+    toggleMenu,
+    cartItems,
+    decreaseQuantity,
+    increaseQuantity,
+  } = useContext(GlobalContext);
 
   return (
     <CheckoutContainer isMenuOpen={isMenuOpen}>
@@ -22,11 +28,15 @@ export const Checkout = () => {
               <CheckoutItensList key={uuidv4()}>
                 <img src={`${item.thumbnail}.jpg`} />
                 <CheckoutItemQuantity>
-                  <button>-</button>
+                  <button onClick={() => decreaseQuantity(item.thumbnail)}>
+                    -
+                  </button>
                   <span>{item.quantity}</span>
-                  <button>+</button>
+                  <button onClick={() => increaseQuantity(item.thumbnail)}>
+                    +
+                  </button>
                 </CheckoutItemQuantity>
-                <span>{item.price * item.quantity}</span>
+                <span>{(item.price * item.quantity).toFixed(2)}</span>
               </CheckoutItensList>
             ))
           : ""}
