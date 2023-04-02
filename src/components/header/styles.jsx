@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+
   img {
     height: 4vh;
   }
@@ -27,13 +28,20 @@ export const ShoppingCart = styled.div`
   border-radius: 5px;
   color: #fff;
   button {
+    position: relative;
     padding-top: 5px;
     font-size: 55px;
     background: none;
     color: #fff;
     border: 0;
     cursor: pointer;
+    span {
+      position: absolute;
+      left: 0;
+      color: red;
+    }
   }
+
   @media screen and (max-width: 550px) {
     button {
       font-size: 25px;
