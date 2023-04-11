@@ -5,7 +5,7 @@ export const FooterContainer = styled.div`
   height: 5vh;
   background: rgb(0, 0, 0);
   margin-top: auto;
-  color: #a8a4a4;
+    color: #a8a4a4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +15,8 @@ export const FooterContainer = styled.div`
   a {
     right: 0;
     text-decoration: none;
+    color: #a8a4a4;
+
   }
   a:visited {
     color: #a8a4a4;
