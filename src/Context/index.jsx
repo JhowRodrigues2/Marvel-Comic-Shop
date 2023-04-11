@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 export const GlobalContext = createContext({});
 import md5 from "md5";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalProvider = ({ children }) => {

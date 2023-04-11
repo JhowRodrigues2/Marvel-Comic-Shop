@@ -3,7 +3,7 @@ import { HeaderContainer, ShoppingCart } from "./styles";
 import LogoMarvel from "../../assets/logoMarvel.svg";
 import { FiShoppingCart } from "react-icons/fi";
 import { Checkout } from "../Checkout";
-import { GlobalContext } from "../../context";
+import { GlobalContext } from "../../context.jsx";
 export const Header = () => {
   const { toggleMenu, cartItems } = useContext(GlobalContext);
   return (

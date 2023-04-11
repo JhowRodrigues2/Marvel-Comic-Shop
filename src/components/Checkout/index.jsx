@@ -9,7 +9,7 @@ import {
   RemoveItemList,
   CheckoutTotal,
 } from "./styles";
-import { GlobalContext } from "../../context";
+import { GlobalContext } from "../../context.jsx";
 import { v4 as uuidv4 } from "uuid";
 import {BsTrash} from 'react-icons/bs';
 

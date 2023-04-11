@@ -9,7 +9,7 @@ import {
 import { Search } from "./styles";
 import { FaSearchengin } from "react-icons/fa";
 import { Card } from "../Card";
-import { GlobalContext } from "../../context";
+import { GlobalContext } from "../../context.jsx";
 import { ToastContainer } from "react-toastify";
 export const Cards = () => {
   const [placeholder, setPlaceholder] = useState("PESQUISAR QUADRINHO");
