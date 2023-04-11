@@ -29,16 +29,18 @@ export const ShoppingCart = styled.div`
   button {
     position: relative;
     padding-top: 5px;
-    font-size: 55px;
+    font-size: 35px;
     background: none;
     color: #fff;
     border: 0;
     cursor: pointer;
     span {
       position: absolute;
-      font-size: 14px;
-      top: 22px;
-      right: 17px;
+      font-size: 9px;
+      top: 16px;
+      right: 10px;
+      font-weight: bold;
+
   
     }
   }

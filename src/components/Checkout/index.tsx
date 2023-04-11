@@ -6,6 +6,7 @@ import {
   CheckoutItensContainer,
   CheckoutItensList,
   CheckoutItemQuantity,
+  RemoveItemList,
 } from "./styles";
 import { GlobalContext } from "../../context";
 import { v4 as uuidv4 } from "uuid";
@@ -17,6 +18,7 @@ export const Checkout = () => {
     cartItems,
     decreaseQuantity,
     increaseQuantity,
+    removeCart
   } = useContext(GlobalContext);
 
   return (
@@ -29,19 +31,22 @@ export const Checkout = () => {
                 <img src={`${item.thumbnail}.jpg`} />
                 <CheckoutItemQuantity>
                   <button onClick={() => decreaseQuantity(item.thumbnail)}>
-                    -
+                   <span>-</span> 
                   </button>
                   <span>{item.quantity}</span>
                   <button onClick={() => increaseQuantity(item.thumbnail)}>
-                    +
+                  <span>+</span> 
                   </button>
                 </CheckoutItemQuantity>
                 <span>{(item.price * item.quantity).toFixed(2)}</span>
+                  <RemoveItemList onClick={()=>removeCart(item.thumbnail)}>x</RemoveItemList>
               </CheckoutItensList>
             ))
           : ""}
+          {cartItems.length >0 ?   <CheckoutButton>Finalizar Compra</CheckoutButton>: 'Carrinho Vazio!'
+}
       </CheckoutItensContainer>
-      <CheckoutButton>Finalizar Compra</CheckoutButton>
+
     </CheckoutContainer>
   );
 };

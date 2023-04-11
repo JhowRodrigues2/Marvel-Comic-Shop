@@ -76,6 +76,13 @@ const GlobalProvider = ({ children }) => {
     }
   };
 
+  const removeCart = (thumbnailToRemove) => {
+    const updatedCartItems = cartItems.filter(
+      (item) => item.thumbnail !== thumbnailToRemove
+    );
+    setCartItems(updatedCartItems);
+  };
+
   const increaseQuantity = (thumbnail) => {
     const updatedCartItems = cartItems.map((item) => {
       if (item.thumbnail === thumbnail) {
@@ -145,6 +152,7 @@ const GlobalProvider = ({ children }) => {
         quantity,
         increaseQuantity,
         decreaseQuantity,
+        removeCart,
       }}
     >
       {children}

@@ -14,6 +14,7 @@ export const CheckoutContainer = styled.div`
   animation: fromLeft 0.5s backwards;
   z-index: 20;
 
+
   @keyframes fromLeft {
     from {
       opacity: 0;
@@ -24,14 +25,42 @@ export const CheckoutContainer = styled.div`
       opacity: 1;
     }
   }
-  @media (max-width: 620px) {
+ 
+  @media (max-width: 685px) {
     width: 70%;
   }
 `;
 
-export const CheckoutButton = styled.button`
+
+export const CheckoutClose = styled.button`
+margin-top:10px;
+margin-left:10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 15px;
+  color: #ffeb38;
+  background: 0;
+  cursor: pointer;
+  border:1px solid #ffeb38;
+  
+
+`;
+export const CheckoutItensContainer = styled.div`
   width: 100%;
-  height: 5vh;
+  height: 90%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const CheckoutButton = styled.button`
+
+ width: 90%;
+  min-height: 5vh;
   background-image: linear-gradient(to right, #ffeb38, #2e1050);
   background-size: 200% 100%;
   color: #fff;
@@ -42,6 +71,8 @@ export const CheckoutButton = styled.button`
   letter-spacing: 2px;
   font-weight: 700;
   transition: background-position 0.3s ease;
+  border-radius:5px;
+  bottom: 0;
   &:hover {
     background-position: -100% 0;
   }
@@ -51,33 +82,16 @@ export const CheckoutButton = styled.button`
     font-size: 12px;
   }
 `;
-export const CheckoutClose = styled.button`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  color: #ffeb38;
-  border: none;
-  background: 0;
-  cursor: pointer;
-  @media (max-width: 620px) {
-    font-size: 20px;
-  }
-`;
-export const CheckoutItensContainer = styled.div`
-  width: 100%;
-  height: 90%;
-  color: #fff;
-`;
 export const CheckoutItensList = styled.div`
+  margin-top: 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  background-color: #ee1212;
+  width: 90%;
   color: #fff;
   border-radius: 8px;
+  border:1px solid #a3a3a3;
 
   img {
     width: 80px;
@@ -95,29 +109,32 @@ export const CheckoutItemQuantity = styled.div`
   border: 1px solid lightgray;
   padding: 2px 0;
   border-radius: 4px;
-  width: 65px;
-  height: 19px;
+
   button {
     font-size: 12px;
     width: 1.8rem;
     border: 0;
     background-color: transparent;
     cursor: pointer;
+
   }
-  .span {
-    border-right: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding: 0 0.75rem;
+  span {
+    color:#fff;
     font-size: 12px;
-    font-weight: 600;
-    align-self: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
   }
-  @media (max-width: 768px) {
-    width: 97px;
-    height: 34px;
+  @media (max-width: 450px) {
+    width: 50px;
+    height: 24px;
   }
   button {
     color: #000000;
     font-weight: 400;
   }
 `;
+export const RemoveItemList = styled.button`
+cursor:pointer;
+`
