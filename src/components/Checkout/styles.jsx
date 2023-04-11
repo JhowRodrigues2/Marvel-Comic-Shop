@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  width: 686px;
+  width: 500px;
   height: 95vh;
   position: fixed;
   display: ${({ isMenuOpen }) => (isMenuOpen ? "none" : " flex")};
@@ -88,11 +88,11 @@ export const CheckoutItensList = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
-  color: #fff;
+  width: 50%;
+  color:#acacac;
   border-radius: 8px;
-  border:1px solid #a3a3a3;
-
+    position:relative;
+    background:#222221;
   img {
     width: 80px;
     height: 80px;
@@ -103,10 +103,16 @@ export const CheckoutItensList = styled.div`
     font-size: 14px;
     line-height: 17px;
   }
+  @media (max-width: 650px) {
+    width: 70%;
+  }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
 export const CheckoutItemQuantity = styled.div`
   display: flex;
-  border: 1px solid lightgray;
+  border: 1px solid #acacac ;
   padding: 2px 0;
   border-radius: 4px;
 
@@ -119,7 +125,7 @@ export const CheckoutItemQuantity = styled.div`
 
   }
   span {
-    color:#fff;
+    color:#acacac;
     font-size: 12px;
     display:flex;
     flex-direction:column;
@@ -136,5 +142,22 @@ export const CheckoutItemQuantity = styled.div`
   }
 `;
 export const RemoveItemList = styled.button`
-cursor:pointer;
+width:20px;
+height:20px;
+top:0;
+right:0;
+border:none;
+position:absolute;
+color:#acacac;
+  text-align: center;
+  font-size: 12px;
+  background: 0;
+  cursor: pointer;
+`
+export const CheckoutTotal = styled.p`
+width:90%;
+text-align:end;
+font-size:16px;
+letter-spacing: 1px;
+font-family: "Bangers", cursive;
 `

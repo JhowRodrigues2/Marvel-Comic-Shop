@@ -7,9 +7,11 @@ import {
   CheckoutItensList,
   CheckoutItemQuantity,
   RemoveItemList,
+  CheckoutTotal,
 } from "./styles";
 import { GlobalContext } from "../../context";
 import { v4 as uuidv4 } from "uuid";
+import {BsTrash} from 'react-icons/bs';
 
 export const Checkout = () => {
   const {
@@ -21,6 +23,7 @@ export const Checkout = () => {
     removeCart
   } = useContext(GlobalContext);
 
+  const totalPrice = cartItems.map(item => item.price * item.quantity).reduce((total, price) => total + price, 0)
   return (
     <CheckoutContainer isMenuOpen={isMenuOpen}>
       <CheckoutClose onClick={toggleMenu}>X</CheckoutClose>
@@ -39,14 +42,15 @@ export const Checkout = () => {
                   </button>
                 </CheckoutItemQuantity>
                 <span>{(item.price * item.quantity).toFixed(2)}</span>
-                  <RemoveItemList onClick={()=>removeCart(item.thumbnail)}>x</RemoveItemList>
+                  <RemoveItemList onClick={()=>removeCart(item.thumbnail)}><BsTrash/></RemoveItemList>
               </CheckoutItensList>
             ))
           : ""}
+          {cartItems.length >0? <CheckoutTotal>Total: {totalPrice.toFixed(2)}</CheckoutTotal>:''}
           {cartItems.length >0 ?   <CheckoutButton>Finalizar Compra</CheckoutButton>: 'Carrinho Vazio!'
+
 }
       </CheckoutItensContainer>
-
     </CheckoutContainer>
   );
 };
