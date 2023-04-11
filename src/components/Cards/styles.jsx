@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const CardsContainer = styled.div`
-  width: 80%;
+  width: 100%;
   height: 85vh;
 `;
 export const SearchContainer = styled.div`
@@ -66,7 +66,7 @@ export const Search = styled.div`
   }
 
   @media (max-width: 880px) {
-    width: 100%;
+    width: 90%;
   }
   @media (max-width: 620px) {
     input::placeholder {
@@ -119,51 +119,21 @@ export const CardListContainer = styled.ul`
     animation: ${fadeIn} 1s ease-in-out forwards;
   }
 
-  li:nth-child(1) {
-    animation-delay: 0.1s;
-  }
+  ${(() => {
+    let styles = "";
 
-  li:nth-child(2) {
-    animation-delay: 0.2s;
-  }
+    for (let i = 0; i < 12; i++) {
+      styles += `
+        li:nth-child(${i + 1}) {
+          animation-delay: ${(i + 1) * 0.1}s;
+        }
+      `;
+    }
 
-  li:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-
-  li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  li:nth-child(4) {
-    animation-delay: 0.5s;
-  }
-  li:nth-child(5) {
-    animation-delay: 0.6s;
-  }
-  li:nth-child(6) {
-    animation-delay: 0.7s;
-  }
-  li:nth-child(7) {
-    animation-delay: 0.8s;
-  }
-  li:nth-child(8) {
-    animation-delay: 0.9s;
-  }
-  li:nth-child(8) {
-    animation-delay: 1s;
-  }
-  li:nth-child(9) {
-    animation-delay: 1.1s;
-  }
-  li:nth-child(10) {
-    animation-delay: 1.2s;
-  }
-  li:nth-child(11) {
-    animation-delay: 1.3s;
-  }
-  li:nth-child(12) {
-    animation-delay: 1.4s;
-  }
+    return styles;
+  })()}
+  
+  
   @media (max-width: 780px) {
     height: auto;
   }

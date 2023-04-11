@@ -8,7 +8,6 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-
   img {
     height: 4vh;
   }
@@ -37,14 +36,11 @@ export const ShoppingCart = styled.div`
     cursor: pointer;
     span {
       position: absolute;
-      left: 0;
-      color: red;
+      font-size: 14px;
+      top: 22px;
+      right: 17px;
+  
     }
   }
 
-  @media screen and (max-width: 550px) {
-    button {
-      font-size: 25px;
-    }
-  }
 `;

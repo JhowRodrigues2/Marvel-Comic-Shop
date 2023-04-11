@@ -6,15 +6,13 @@ import { Checkout } from "../Checkout";
 import { GlobalContext } from "../../context";
 export const Header = () => {
   const { toggleMenu, cartItems } = useContext(GlobalContext);
-
-  console.log(cartItems.length);
   return (
     <HeaderContainer>
       <img src={LogoMarvel} alt="Marvel Logo" />
       <ShoppingCart>
         <button onClick={toggleMenu}>
           <FiShoppingCart />
-          <span>{cartItems.length >= 1 ? cartItems.length : ""}</span>aaaaa
+          <span>{cartItems.length >= 1 ? cartItems.length : ""}</span>
         </button>
       </ShoppingCart>
       <Checkout />
