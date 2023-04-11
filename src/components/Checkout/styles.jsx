@@ -61,9 +61,9 @@ export const CheckoutButton = styled.button`
 
  width: 90%;
   min-height: 5vh;
-  background-image: linear-gradient(to right, #ffeb38, #2e1050);
+  background: #ffeb38;
   background-size: 200% 100%;
-  color: #fff;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   border: none;
   font-size: 18px;
@@ -74,11 +74,11 @@ export const CheckoutButton = styled.button`
   border-radius:5px;
   bottom: 0;
   &:hover {
-    background-position: -100% 0;
+    transition: ease-in 0.3s;
+    font-size: 21px;
   }
   @media (max-width: 620px) {
-    background: #ffeb38;
-    color: rgb(0, 0, 0);
+
     font-size: 12px;
   }
 `;
