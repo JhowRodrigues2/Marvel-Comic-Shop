@@ -10,6 +10,7 @@ import { Search } from "./styles";
 import { FaSearchengin } from "react-icons/fa";
 import { Card } from "../Card";
 import { GlobalContext } from "../../context";
+import { ToastContainer } from "react-toastify";
 export const Cards = () => {
   const [placeholder, setPlaceholder] = useState("PESQUISAR QUADRINHO");
   const handleOnFocus = () => {
@@ -31,6 +32,14 @@ export const Cards = () => {
   } = useContext(GlobalContext);
   return (
     <CardsContainer>
+<ToastContainer
+position="top-right"
+autoClose={1000}
+hideProgressBar={false}
+newestOnTop={false}
+rtl={false}
+theme="dark"
+/>
       <SearchContainer>
         <Search>
           <input

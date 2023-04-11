@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 export const GlobalContext = createContext({});
 import md5 from "md5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalProvider = ({ children }) => {
   const [comicsDATA, setComicsDATA] = useState([]);
@@ -11,7 +13,6 @@ const GlobalProvider = ({ children }) => {
   const [itensPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(0);
   const [cartItems, setCartItems] = useState([]);
-
   const [quantity] = useState(0);
   const pages = Math.ceil(comicsDATA && comicsDATA.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
@@ -19,6 +20,8 @@ const GlobalProvider = ({ children }) => {
   const currentItens = comicsDATA.slice(startIndex, endIndex);
   const publicKey = "6957be1383fc0b2a449ddbe9f6dd5274";
   const privateKey = "669a8c930982271423a321682044d536152f73b2";
+
+
 
   useEffect(() => {
     const loadHeroesComics = async () => {
@@ -74,6 +77,9 @@ const GlobalProvider = ({ children }) => {
       });
       setCartItems(updatedCartItems);
     }
+
+    toast("Item adicionado ao carrinho ✔️"
+    );
   };
 
   const removeCart = (thumbnailToRemove) => {
