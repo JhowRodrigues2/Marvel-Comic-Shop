@@ -3,6 +3,14 @@ import styled, { keyframes } from "styled-components";
 export const CardsContainer = styled.div`
   width: 100%;
   height: 85vh;
+  .toastBg {
+    background: none;
+  }
+  @media (max-width: 490px) {
+    .toastBg {
+      top: 40px;
+    }
+  }
 `;
 export const SearchContainer = styled.div`
   display: flex;
@@ -132,8 +140,7 @@ export const CardListContainer = styled.ul`
 
     return styles;
   })()}
-  
-  
+
   @media (max-width: 780px) {
     height: auto;
   }

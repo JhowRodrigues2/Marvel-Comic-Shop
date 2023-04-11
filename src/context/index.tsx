@@ -78,7 +78,7 @@ const GlobalProvider = ({ children }) => {
       setCartItems(updatedCartItems);
     }
 
-    toast("Item adicionado ao carrinho ✔️"
+    toast.success("Item adicionado ao carrinho!",{className:'toastBg'}
     );
   };
 
