@@ -1,7 +1,7 @@
 import GlobalStyle from "./styles/GlobalStyle";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import GlobalProvider from "./context";
+import GlobalProvider from "./context/index";
 import { Main } from "./components/main";
 import { AppContainer } from "./styles/GlobalStyle";
 function App() {
