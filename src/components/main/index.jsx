@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../../context";
+import { GlobalContext } from "../../Context";
 import { Cards } from "../Cards";
 import { Loading } from "../Loading";
 import { MainContainer } from "./styles";
