@@ -11,7 +11,7 @@ export const FooterContainer = styled.div`
   justify-content: center;
   position: fixed;
   bottom: 0;
-  gap: 16px;
+  gap: 1rem;
   a {
     right: 0;
     text-decoration: none;
@@ -23,10 +23,10 @@ export const FooterContainer = styled.div`
   }
   @media screen and(max-width: 550px) {
     font-size: 12px;
-    gap: 10px;
+    gap: 0.62rem;
   }
   @media screen and(max-width: 380px) {
     font-size: 10px;
-    gap: 8px;
+    gap: 0.5rem;
   }
 `;
