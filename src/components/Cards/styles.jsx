@@ -3,11 +3,9 @@ import styled, { keyframes } from "styled-components";
 export const CardsContainer = styled.div`
   width: 100%;
   height: 85vh;
-  .toastBg {
-    background: none;
-  }
+
   @media (max-width: 490px) {
-    .toastBg {
+    .notification {
       top: 40px;
     }
   }
@@ -157,8 +155,9 @@ export const PaginationContainer = styled.div`
   align-items: center;
   justify-content: end;
   gap: 0.5rem;
-  @media (min-width: 550px) {
-    margin-bottom: 5vh;
+  @media (max-width: 550px) {
+ margin-bottom: 5vh;
+ 
   }
 `;
 

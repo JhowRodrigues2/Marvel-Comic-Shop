@@ -9,7 +9,7 @@ import {
   Price,
 } from "./styles";
 import Swal from "sweetalert2";
-import { GlobalContext } from "../../context.jsx";
+import { GlobalContext } from "../../context";
 export const Card = ({ thumbnail, price, comicTitle, pageCount, creators }) => {
   const { addCart } = useContext(GlobalContext);
 

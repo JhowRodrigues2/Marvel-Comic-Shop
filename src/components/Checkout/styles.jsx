@@ -59,7 +59,7 @@ export const CheckoutItensContainer = styled.div`
 
 export const CheckoutButton = styled.button`
 
- width: 90%;
+  width: 90%;
   min-height: 5vh;
   background: #ffeb38;
   background-size: 200% 100%;
@@ -78,7 +78,7 @@ export const CheckoutButton = styled.button`
     font-size: 21px;
   }
   @media (max-width: 620px) {
-
+    height: auto;
     font-size: 12px;
   }
 `;

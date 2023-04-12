@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { GlobalContext } from "../../context";
+
 import {
   CheckoutContainer,
   CheckoutButton,
@@ -9,7 +11,6 @@ import {
   RemoveItemList,
   CheckoutTotal,
 } from "./styles";
-import { GlobalContext } from "../../context.jsx";
 import { v4 as uuidv4 } from "uuid";
 import {BsTrash} from 'react-icons/bs';
 
