@@ -7,4 +7,8 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
 });
